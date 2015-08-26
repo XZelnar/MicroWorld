@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ScripterNet</name>
+    </assembly>
+    <members>
+        <member name="M:ScripterNet.ScripterVM.#ctor">
+            <summary>
+            Creates a new instance of scripting engine
+            </summary>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.Reset">
+            <summary>
+            Terminates any active scripts and resets any changes to the engine made after initialization
+            </summary>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.Terminate">
+            <summary>
+            Terminates any active scripts and clears pending scripts queue
+            </summary>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.GetVariable(System.String)">
+            <summary>
+            Returns value of specified variable. If variable doesn't exist, an exception is thrown.
+            </summary>
+            <param name="name">Name of internal variable</param>
+            <returns>Value of the specified variable</returns>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.SetVariable(System.String,System.Object)">
+            <summary>
+            Sets value of specified variable. Variable is created if it doesn't exist.
+            </summary>
+            <param name="name">Name of internal variable</param>
+            <param name="value">New value</param>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.InvokeFunction(System.String,System.Object[])">
+            <summary>
+            Invokes a specified function with specified parameters. If no such function is found, an error is thrown.
+            </summary>
+            <param name="name">Name of function</param>
+            <param name="parameters">Array of parameters. Null is acceptable if function has no parameters</param>
+            <returns>Result of function exection. If function return type is void, null is returned</returns>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.RegisterFunction(System.String,System.Reflection.MethodBase)">
+            <summary>
+            Registers a specified function to be called from scripts
+            </summary>
+            <param name="name">Name that is associated with the function. </param>
+            <param name="function"></param>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.RemoveFunction(System.String)">
+            <summary>
+            Removes registered function
+            </summary>
+            <param name="name">Function name</param>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.RegisterAssembly(System.Type)">
+            <summary>
+            Registers assembly that contains specified type inside engine for reference of all its containing types
+            </summary>
+            <param name="type">Type to register</param>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.RegisterAssembly(System.Reflection.Assembly)">
+            <summary>
+            Registers specified assembly inside engine for reference of all its containing types
+            </summary>
+            <param name="assembly">Assembly to register</param>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.Execute(System.String)">
+            <summary>
+            Executes provided code
+            </summary>
+            <param name="code">Code to execute</param>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.ExecuteFile(System.String)">
+            <summary>
+            Executes code from a file
+            </summary>
+            <param name="fileName">File name</param>
+        </member>
+        <member name="M:ScripterNet.ScripterVM.Compile(System.String,System.String,System.Boolean)">
+            <summary>
+            Compiles provided code into a file. Compiled code does not need to be parsed when loaded.
+            </summary>
+            <param name="code">Code to compile</param>
+            <param name="fileName">File to save compiled code to</param>
+            <param name="overrideIfExists">Specifies wether to override file if it already exists</param>
+        </member>
+        <member name="P:ScripterNet.ScripterVM.InfiniteLoopControl">
+            <summary>
+            Controls how much iterations are made before loop is terminated
+            </summary>
+        </member>
+        <member name="P:ScripterNet.ScripterVM.IsExecuting">
+            <summary>
+            Indicates wether VM is executing any scripts or not
+            </summary>
+        </member>
+        <member name="P:ScripterNet.ScripterVM.State">
+            <summary>
+            Returns current state of the VM
+            </summary>
+        </member>
+        <member name="E:ScripterNet.ScripterVM.onVariableChanged">
+            <summary>
+            Invoked when a variable value is changed in any way
+            </summary>
+        </member>
+        <member name="E:ScripterNet.ScripterVM.onDebug">
+            <summary>
+            Invoked upon every command execution
+            </summary>
+        </member>
+        <member name="E:ScripterNet.ScripterVM.onVMStateChanged">
+            <summary>
+            Invoked upon every command execution
+            </summary>
+        </member>
+    </members>
+</doc>
