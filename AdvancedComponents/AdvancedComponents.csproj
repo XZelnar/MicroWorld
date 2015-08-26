@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D90ACB9D-549F-495F-ABDE-EB425B1A3A53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdvancedComponents</RootNamespace>
+    <AssemblyName>AdvancedComponents</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Microworld\Microworld\bin\x86\Debug\Components\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Microworld\Microworld\bin\x86\Release\Components\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Accumulator.cs" />
+    <Compile Include="Components\Graphics\AccumulatorGraphics.cs" />
+    <Compile Include="Components\GUI\AdvancedJointProperties.cs" />
+    <Compile Include="Components\GUI\AccumulatorProperties.cs" />
+    <Compile Include="Components\GUI\HubProperties.cs" />
+    <Compile Include="Components\Hub.cs" />
+    <Compile Include="Components\Graphics\AdvancedJointGraphics.cs" />
+    <Compile Include="Components\Graphics\HubGraphics.cs" />
+    <Compile Include="Components\Graphics\TeslaCoilGraphics.cs" />
+    <Compile Include="Components\GUI\TeslaCoilProperties.cs" />
+    <Compile Include="Components\AdvancedJoint.cs" />
+    <Compile Include="Components\Logics\AdvancedJointLogics.cs" />
+    <Compile Include="Components\Logics\AccumulatorLogics.cs" />
+    <Compile Include="Components\Logics\HubLogics.cs" />
+    <Compile Include="Components\TeslaCoil.cs" />
+    <Compile Include="Components\Logics\TeslaCoilLogics.cs" />
+    <Compile Include="Logics\LUA\LUACommands.cs" />
+    <Compile Include="ModAdvancedComponents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microworld\Microworld\MicroWorld.csproj">
+      <Project>{7C4EC2F2-8332-426C-BAAE-5D088D3BC180}</Project>
+      <Name>MicroWorld</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>::Clear release
+if "Release" == "$(ConfigurationName)" (
+    cd "$(TargetDir)"
+    cd "Components"
+    del "*.pdb"
+    del "*.xml"
+    rmdir /S /Q "Content"
+    del "HtmlRenderer.dll"
+    del "lua51.dll"
+    del "LuaInterface.dll"
+    del "Microsoft.Xna.Framework.dll"
+    del "Microsoft.Xna.Framework.Game.dll"
+    del "Microsoft.Xna.Framework.Graphics.dll"
+    del "Microworld.exe"
+    del "ScripterNet.dll" )</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
