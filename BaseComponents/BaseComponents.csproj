@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9431E01C-BE85-4705-B207-E716A7CB057E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaseComponents</RootNamespace>
+    <AssemblyName>BaseComponents</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Microworld\Microworld\bin\x86\Debug\Components\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Microworld\Microworld\bin\x86\Release\Components\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="lua51">
+      <HintPath>..\Microworld\Microworld\bin\x86\Debug\lua51.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface">
+      <HintPath>..\Microworld\Microworld\bin\x86\Debug\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Lamp.cs" />
+    <Compile Include="Components\Graphics\LampGraphics.cs" />
+    <Compile Include="Components\GUI\LampProperties.cs" />
+    <Compile Include="Components\Logics\LampLogics.cs" />
+    <Compile Include="Components\VoltageGraph.cs" />
+    <Compile Include="Components\Button.cs" />
+    <Compile Include="Components\ANDGate.cs" />
+    <Compile Include="Components\Capacitor.cs" />
+    <Compile Include="Components\Graphics\VoltageGraphGraphics.cs" />
+    <Compile Include="Components\Graphics\PowerACGraphics.cs" />
+    <Compile Include="Components\GUI\VoltageGraphProperties.cs" />
+    <Compile Include="Components\GUI\PowerACProperties.cs" />
+    <Compile Include="Components\Logics\VoltageGraphLogics.cs" />
+    <Compile Include="Components\Logics\PowerACLogics.cs" />
+    <Compile Include="Components\PowerAC.cs" />
+    <Compile Include="Components\Graphics\CapacitorGraphics.cs" />
+    <Compile Include="Components\GUI\CapacitorProperties.cs" />
+    <Compile Include="Components\GUI\TransistorProperties.cs" />
+    <Compile Include="Components\Logics\CapacitorLogics.cs" />
+    <Compile Include="Components\Transistor.cs" />
+    <Compile Include="Components\DoubleSwitch.cs" />
+    <Compile Include="Components\Graphics\TransistorGraphics.cs" />
+    <Compile Include="Components\Graphics\DoubleSwitchGraphics.cs" />
+    <Compile Include="Components\Graphics\NANDGateGraphics.cs" />
+    <Compile Include="Components\GUI\ResistorProperties.cs" />
+    <Compile Include="Components\GUI\PulseFormerProperties.cs" />
+    <Compile Include="Components\GUI\PowerProperties.cs" />
+    <Compile Include="Components\GUI\PhotoresistorProperties.cs" />
+    <Compile Include="Components\GUI\PulseFormerCloseup.cs" />
+    <Compile Include="Components\GUI\LEDProperties.cs" />
+    <Compile Include="Components\Logics\TransistorLogics.cs" />
+    <Compile Include="Components\Logics\DoubleSwitchLogics.cs" />
+    <Compile Include="Components\Logics\NANDGateLogics.cs" />
+    <Compile Include="Components\NANDGate.cs" />
+    <Compile Include="Components\Graphics\PulseFormerGraphics.cs" />
+    <Compile Include="Components\Logics\PulseFormerLogics.cs" />
+    <Compile Include="Components\PulseFormer.cs" />
+    <Compile Include="Components\Graphics\PhotoresistorGraphics.cs" />
+    <Compile Include="Components\Photoresistor.cs" />
+    <Compile Include="Components\Graphics\ResistorDynamicGraphics.cs" />
+    <Compile Include="Components\Logics\PhotoresistorLogics.cs" />
+    <Compile Include="Components\SegmentDisplay4.cs" />
+    <Compile Include="Components\Graphics\SegmentDisplay4Graphics.cs" />
+    <Compile Include="Components\Logics\SegmentDisplay4Logics.cs" />
+    <Compile Include="Components\XORGate.cs" />
+    <Compile Include="Components\Graphics\XORGateGraphics.cs" />
+    <Compile Include="Components\Logics\XORGateLogics.cs" />
+    <Compile Include="Components\NOTGate.cs" />
+    <Compile Include="Components\Graphics\NOTGateGraphics.cs" />
+    <Compile Include="Components\Logics\NOTGateLogics.cs" />
+    <Compile Include="Components\ORGate.cs" />
+    <Compile Include="Components\Graphics\ButtonGraphics.cs" />
+    <Compile Include="Components\Graphics\ANDGateGraphics.cs" />
+    <Compile Include="Components\Graphics\ORGateGraphics.cs" />
+    <Compile Include="Components\Graphics\SwitchGraphics.cs" />
+    <Compile Include="Components\Logics\ButtonLogics.cs" />
+    <Compile Include="Components\Logics\ANDGateLogics.cs" />
+    <Compile Include="Components\Logics\ORGateLogics.cs" />
+    <Compile Include="Components\Logics\SwitchLogics.cs" />
+    <Compile Include="Components\Switch.cs" />
+    <Compile Include="Components\Diode.cs" />
+    <Compile Include="Components\Graphics\DiodeGraphics.cs" />
+    <Compile Include="Components\Graphics\PowerGraphics.cs" />
+    <Compile Include="Components\Logics\DiodeLogics.cs" />
+    <Compile Include="Components\Logics\PowerLogics.cs" />
+    <Compile Include="Components\Power.cs" />
+    <Compile Include="Components\Graphics\GroundGraphics.cs" />
+    <Compile Include="Components\Ground.cs" />
+    <Compile Include="Components\Logics\GroundLogics.cs" />
+    <Compile Include="Components\ResistorDynamic.cs" />
+    <Compile Include="Components\Resistor.cs" />
+    <Compile Include="Components\Graphics\ResistorGraphics.cs" />
+    <Compile Include="Components\Graphics\LEDGraphics.cs" />
+    <Compile Include="Components\LED.cs" />
+    <Compile Include="Components\Logics\ResistorLogics.cs" />
+    <Compile Include="Components\Logics\LEDLogics.cs" />
+    <Compile Include="Logics\LUA\LUACommands.cs" />
+    <Compile Include="ModBaseComponents.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microworld\Microworld\MicroWorld.csproj">
+      <Project>{7C4EC2F2-8332-426C-BAAE-5D088D3BC180}</Project>
+      <Name>MicroWorld</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
