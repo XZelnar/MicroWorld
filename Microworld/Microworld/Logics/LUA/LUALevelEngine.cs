@@ -53,14 +53,7 @@ namespace MicroWorld.Logics.LUA
             if (pLuaVM == null) return;
             terminate = true;
             System.Threading.Thread.Sleep(50);
-            /*
-            try
-            {
-                //To hell with it. I tried being nice - didn't work. So FUCK THAT!!!
-                //GC will probably handle this shit.
-                //pLuaVM.Close();
-            }
-            catch { }//*/
+            //pLuaVM.Close();//Doesn't work. GC will handle this
             System.Threading.Thread.Sleep(10);
             //pLuaVM.Dispose();
             pLuaFuncs.Clear();
